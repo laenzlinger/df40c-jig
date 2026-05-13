@@ -24,8 +24,8 @@ A thin FR4 jig PCB with precision-routed slots that constrain the connector body
 ## Design Principles
 
 - **2 diagonal dowel pins** — constrains position and rotation without over-constraining
-- **Press-fit pins in jig** (Ø0.95mm hole for Ø1.0mm pin) — permanent, no soldering
-- **Clearance holes on carrier** (Ø1.05mm NPTH) — jig slides on/off freely
+- **Press-fit pins in jig** (hole = pin Ø − 0.05mm) — permanent, no soldering
+- **Clearance holes on carrier** (hole = pin Ø + 0.05mm NPTH) — jig slides on/off freely
 - **Slot width = connector body width** — constrains lateral movement
 - **Open short ends** — full visibility of pins and pads
 - **Relief cutouts** — clearance for nearby components
@@ -35,12 +35,22 @@ A thin FR4 jig PCB with precision-routed slots that constrain the connector body
 
 | Parameter | Value |
 |-----------|-------|
-| Dowel pin diameter | 1.0mm stainless steel |
-| Jig hole (press-fit) | Ø0.95mm |
-| Carrier hole (clearance) | Ø1.05mm NPTH |
+| Dowel pin diameter | 1.5mm or 2.0mm stainless steel (testing both) |
+| Jig hole (press-fit) | pin diameter − 0.05mm |
+| Carrier hole (clearance) | pin diameter + 0.05mm NPTH |
 | Jig PCB thickness | 1.0mm |
 | Placement accuracy | ±0.075mm |
 | Target connector | DF40C-100DS-0.4V (0.4mm pitch) |
+
+### Pin diameter selection
+
+1.0mm was considered but rejected — too fragile and difficult to handle.
+Ordered both 1.5mm and 2.0mm pins to evaluate:
+
+- **1.5mm**: smaller holes, less routing disruption on carrier, still rigid enough
+- **2.0mm**: very robust, easy to handle, but larger holes may conflict with traces
+
+Final choice depends on available space near DF40C connector pads on the Granit carrier board.
 
 ## Status
 
